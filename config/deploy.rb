@@ -52,13 +52,13 @@ namespace :deploy do
 
   after :publishing, :restart
 
-  after :restart, :clear_cache do
-    # on roles(:web), in: :groups, limit: 3, wait: 10 do
-    #   # Here we can do anything such as:
-    within release_path do
-      execute :rake, 'cache:clear'
+  desc 'Reset all cached actions and pages'
+  task :clear_cache do
+    on roles(:web) do
+      within release_path do
+        execute :rake, 'tmp:cache:clear'
+      end
     end
-    # end
   end
 
   after :finishing, "deploy:cleanup"
