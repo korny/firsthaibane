@@ -1,0 +1,9 @@
+<div id="navi">
+  <%= link_to 'home', root_path %> <strong>&bull;</strong>
+  <%= link_to 'original thread', 'http://cff.ssw.net/forum/viewtopic.php?t=1713' %> <strong>&bull;</strong>
+  <%= link_to 'first strip', first_strip_path %> <strong>&bull;</strong>
+  <%= link_to 'last strip', last_strip_path %> <strong>&bull;</strong>
+  <%= link_to 'number listing', ids_strip_path %> <strong>&bull;</strong>
+  <%= link_to 'thumbnail river', thumbs_strip_path %> <strong>&bull;</strong>
+  <%= pluralize(@strips.size, 'strip') %>
+</div>

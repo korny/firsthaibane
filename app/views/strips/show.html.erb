@@ -1,0 +1,27 @@
+<%- @title = '#' + @strip_id %>
+<div class="single">
+  <div id="neighbours">
+    <div id="quickjump">
+    <%- (10..Strip.id_from_strip_name(@strips.last).to_i).step(10) do |i| -%>
+      <%= link_to i, :action => :show, :id => i %>
+    <%- end -%>
+    </div>
+    <%= link_to 'first', :action => :first %>
+    <small>&lt;&lt;</small>
+    <%- if @previous_id -%>
+      <%= link_to @previous_id, { :action => :show, :id => @previous_id }, :accesskey => 'P' %>
+      <small>&lt;</small>
+    <%- end -%>
+    <%= link_to @strip_id, { :action => :show, :id => @strip_id }, :class => 'current' %>
+    <%- if @next_id -%>
+      <small>&gt;</small>
+      <%= link_to @next_id, { :action => :show, :id => @next_id }, :accesskey => 'N' %>
+    <%- end -%>
+    <small>&gt;&gt;</small>
+    <%= link_to "last", :action => :last %>
+  </div>
+  
+  <div id="strip">
+    <%= link_to_if @next_id, image_tag("/strips/#@strip"), :action => :show, :id => @next_id %>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="ids">
+<%= @strips.map do |strip_name|
+ id = Strip.id_from_strip_name(strip_name)
+ link_to id, :action => :show, :id => id
+end.join(' &bull; ').html_safe %>
+</div>
