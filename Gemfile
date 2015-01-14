@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', require: 'actionpack/action_caching'
