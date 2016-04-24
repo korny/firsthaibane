@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.11'
+gem 'rails', '~> 4.1.15'
 gem 'actionpack-action_caching', github: 'rails/actionpack-action_caching', require: 'actionpack/action_caching'
 
 # Use Capistrano for deployment
